@@ -13,9 +13,10 @@ private:
 	string currency_type;//币种
 	int num;//股份
 	int value;//股价
- static	int total;//合计
+
 public:
-	stock(char s, string i, string c, int n, int v, int t);
+	static	int total;//合计
+	stock(char s, string i, string c, int n, int v);
 	double cal();//返回total，即所有账户的总金额
 	double self();//返回自己账户的金额
 	string name()
@@ -26,6 +27,11 @@ public:
 	{
 		return currency_type;
 	}
+	char st()
+	{
+		return stock_type;
+	}
+	
 };
 
 class rate {
@@ -36,4 +42,12 @@ private:
 public:
 	rate(string o, string c, double r);
 	double ra();
+	string o()
+	{
+		return ori_cur;
+	}
+	string c()
+	{
+		return  cur;
+	}
 };
